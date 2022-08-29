@@ -12,9 +12,9 @@ public class Main {
             Person currentPerson = client.poll();
             System.out.println(currentPerson.getName() + " " + currentPerson.getSurname() + " Сошел с атракциона, Колличество билетов " + currentPerson.getTicket());
             int tickets = currentPerson.getTicket();
+            currentPerson.setTicket(--tickets);
             if (tickets > 0) {
                 System.out.println(currentPerson.getName() + " " + currentPerson.getSurname() + " Покатается еще");
-                currentPerson.setTicket(--tickets);
                 client.offer(currentPerson);
             }
         }
